@@ -93,7 +93,6 @@ export class AppService {
       try {
         var chatId = ctx.message.chat.id.toString();
         var messages = ctx?.text.split('@')[0].toLocaleLowerCase();
-        console.log('Message : ', messages);
         const filter = { command: messages };
         var show = await result.findOne(filter);
         if (show) {
@@ -105,7 +104,7 @@ export class AppService {
                 show?.command == '/ckkout' ||
                 show?.command == '/hacker' ||
                 show?.command == '/gay' ||
-                show?.command == '/loveAlone' ||
+                show?.command == '/lovealone' ||
                 show?.command == '/apd' ||
                 show?.command == '/seyha' ||
                 show?.command == '/hav' ||
