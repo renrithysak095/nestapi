@@ -99,17 +99,16 @@ export class AppService {
           // B2B Talking
           if (chatId == '-1001883283529') {
             if (
-              !(
-                show?.command == '/jav' ||
-                show?.command == '/ckkout' ||
-                show?.command == '/hacker' ||
-                show?.command == '/gay' ||
-                show?.command == '/lovealone' ||
-                show?.command == '/apd' ||
-                show?.command == '/seyha' ||
-                show?.command == '/hav' ||
-                show?.command == '/phak' ||
-                show?.command == '/run'
+              (
+                show?.command == '/sak' ||
+                show?.command == '/vita' ||
+                show?.command == '/bongratha' ||
+                show?.command == '/both' ||
+                show?.command == '/boolin' ||
+                show?.command == '/yuth' ||
+                show?.command == '/chivorn' ||
+                show?.command == '/vimean' ||
+                show?.command == '/sokhen'
               )
             ) {
               ctx.sendPhoto(show?.image);
