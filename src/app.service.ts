@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { Context, Telegraf } from 'telegraf';
+const { GoogleGenerativeAI } = require("@google/generative-ai");
 
 @Injectable()
 export class AppService {
@@ -112,10 +113,16 @@ export class AppService {
               )
             ) {
               ctx.sendPhoto(show?.image);
+            }else if(messages.startsWith('~')){
+              ctx.sendMessage(await getInput(messages));
             }
           } // HRD Passed
           else if (chatId == '-1001833768106') {
-            ctx.sendPhoto(show?.image);
+            if(messages.startsWith('~')){
+              ctx.sendMessage(await getInput(messages));
+            }else{
+              ctx.sendPhoto(show?.image);
+            }
           }
         }
       } catch (error) {
@@ -123,4 +130,15 @@ export class AppService {
       }
     });
   }
+}
+
+
+// User input Prompt
+ async function getInput(prompt){
+  const genAI = new GoogleGenerativeAI('AIzaSyD7WWk5s6ja_mRXGmwm5YUJgl-VaqYPe2E');
+  const model = genAI.getGenerativeModel({ model: "gemini-pro"});
+  const result = await model.generateContent(prompt);
+  const response = await result.response;
+  const text = response.text();
+  return text;
 }
