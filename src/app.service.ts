@@ -103,11 +103,15 @@ export class AppService {
               (
                 show?.command == '/sak' ||
                 show?.command == '/vita' ||
-                show?.command == '/bongratha' ||
+                show?.command == '/ratha' ||
+                show?.command == '/vanda' ||
+                show?.command == '/marina' ||
+                show?.command == '/rady' ||
                 show?.command == '/both' ||
                 show?.command == '/boolin' ||
                 show?.command == '/yuth' ||
                 show?.command == '/chivorn' ||
+                show?.command == 'khaw' ||
                 show?.command == '/vimean' ||
                 show?.command == '/sokhen'
               )
